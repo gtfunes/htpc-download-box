@@ -7,11 +7,11 @@ git clone https://github.com/gtfunes/htpc-download-box.git
 chown -R vagrant:vagrant htpc-download-box
 cd htpc-download-box
 cp .env.example .env
+usermod -aG docker $(whoami)
 docker-compose up -d
 SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.provision "shell", inline: $script
-  config.vm.network "private_network", ip: "192.168.7.1"
 end
