@@ -9,5 +9,5 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "media/", "/media", create: true, mount_options: ["uid=1000", "gid=1000"]
+  config.vm.synced_folder "media/", "/media", create: true, type: "nfs", mount_options: ["rw", "vers=3", "tcp", "uid=1000", "gid=1000"], inux__nfs_options: ["rw", "no_subtree_check", "all_squash", "async"]
 end

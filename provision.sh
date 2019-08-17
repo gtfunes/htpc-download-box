@@ -10,5 +10,3 @@ cd htpc-download-box
 cp .env.example .env
 usermod -aG docker $(whoami)
 docker-compose up -d
-chmod 0777 /media/tv
-chmod 0777 /media/movies
