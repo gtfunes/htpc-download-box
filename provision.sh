@@ -10,3 +10,5 @@ cd htpc-download-box
 cp .env.example .env
 usermod -aG docker $(whoami)
 docker-compose up -d
+sudo docker exec -it sonarr chown -R abc:abc /tv/
+sudo docker exec -it radarr chown -R abc:abc /movies/
