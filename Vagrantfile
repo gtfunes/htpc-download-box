@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
   config.disksize.size = "80GB"
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "./config", "/media/config", type: "virtualbox"
 
   config.vm.provider :virtualbox do |vb|
     vb.memory = 3072
