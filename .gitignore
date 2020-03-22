@@ -19,3 +19,8 @@ desktop.ini
 .vagrant
 *.log
 media/
+
+####
+# Configuration files
+
+config/
