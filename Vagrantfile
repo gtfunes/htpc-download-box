@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "public_network", :mac => "080027B712F9", bridge: ["en0: Wi-Fi (Wireless)", "en0", "bridge0"]
   config.vm.box = "geerlingguy/ubuntu1804"
-  config.vm.provision "shell", path: "provision.sh"
+  config.vm.provision "shell", run: "once", path: "provision.sh"
   config.disksize.size = "80GB"
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
