@@ -66,5 +66,4 @@ services:
     network_mode: host
     volumes:
       - ${ROOT}/config/plex/db:/config # plex database
-      - ${ROOT}/config/plex/transcode:/transcode # temp transcoded files
       - ${ROOT}/complete:/data # media library
