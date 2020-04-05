@@ -65,5 +65,8 @@ services:
       - TZ=${TZ} # timezone, defined in .env
     network_mode: host
     volumes:
+      - ./plex-permissions.sh:/usr/local/bin/fix-permissions.sh # fix folder permissions
       - ${ROOT}/config/plex/db:/config # plex database
       - ${ROOT}/complete:/data # media library
+    command: 
+      - fix-permissions.sh # run folder permissions fix script
